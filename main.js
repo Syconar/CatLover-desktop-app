@@ -7,7 +7,7 @@ const isMac = process.platform === "darwin";
 function createMainWindow() {
     const mainWindow = new BrowserWindow({
         title: "Cat Lover",
-        width: isDev ?  1300 : 650,
+        width: isDev ?  1229 : 650,
         height: 700,
     });
 
