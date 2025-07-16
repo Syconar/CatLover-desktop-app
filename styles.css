@@ -99,39 +99,55 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
+
 
 .left-side-options,
 .right-side-options {
     position: absolute;
-    top: 15%;
+    top: 17%;
     display: flex;
     flex-direction: column;
     gap: 50px; /* Space between buttons */
 }
 
 .left-side-options {
-    left: 0;
+    left: -3%;
     align-items: flex-start;
-    margin-left: 40px; /* Space from the edge */
+    margin-left: 50px;
 }
 
 .right-side-options {
-    right: 0;
+    right: -3%;
     align-items: flex-end;
-    margin-right: 40px; /* Space from the edge */
+    margin-right: 50px;
 }
 
 .left-side-options button,
 .right-side-options button {
     background: none;
     border: none;
-    cursor: pointer;
+    cursor: default;
 }
 
+.play-option:hover,
+.brush-option:hover,
+.bath-option:hover,
+.meal-option:hover{
+    transform: scale(1.05);
+}
+
+
 .all-options img {
-    width: 100px;
+    width: 100%;
     height: auto;
+}
+
+.catnorm{
+    position: absolute;
+    left: 15%;
+    bottom: 28px;
 }
 /* */
 
@@ -161,9 +177,22 @@ main{
 
 
 /***** BRUSH TIME *****/
+#brush-page{
+    cursor: none;
+}
+
+#brush-cursor{
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 2;
+    transform: rotate(-35deg);
+}
+
 .catbrush{
     position: absolute;
-    left: 83px;
+    left: 15%;
     bottom: 28px;
 }
 /* */
@@ -173,7 +202,7 @@ main{
 /***** SHOWER TIME *****/
 .catbath{
     position: absolute;
-    left: 83px;
+    left: 15%;
     bottom: 28px;
 }
 /* */
@@ -183,7 +212,7 @@ main{
 /***** MEAL TIME *****/
 .cateat{
     position: absolute;
-    left: 83px;
+    left: 15%;
     bottom: 28px;
 }
 /* */
