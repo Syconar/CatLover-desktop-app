@@ -23,17 +23,17 @@ function createMainWindow() {
     mainWindow.loadFile(path.join(__dirname, "./renderer/index.html"));
 }
 
-app.whenReady().then(() => {
+app.whenReady().then(() => { // Open a app window
   createMainWindow()
 
-  app.on('activate', () => {
+  app.on('activate', () => { // If now window is active, open a new one
     if (BrowserWindow.getAllWindows().length === 0) {
       createMainWindow()
     }
   })
 })
 
-app.on('window-all-closed', () => {
+app.on('window-all-closed', () => { // Check if user is using Mac
   if (!isMac) {
     app.quit()
   }
