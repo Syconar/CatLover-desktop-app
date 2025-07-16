@@ -1,3 +1,4 @@
+// Set timer of activity
 let totalSeconds = 30;
 
 function updateTimer() {
@@ -14,7 +15,7 @@ function startTimer() {
         totalSeconds--;
         updateTimer();
 
-        if (totalSeconds <= 0) {
+        if (totalSeconds <= 0) { // When the timer is at zero, then add notification in the form of option buttons
             clearInterval(timerInterval);
             alert("Play time is over")
         }
@@ -22,6 +23,8 @@ function startTimer() {
 }
 
 window.onload = startTimer;
+//
+
 
 
 // Brush icon fixed to cursor
