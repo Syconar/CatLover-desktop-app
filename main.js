@@ -1,7 +1,9 @@
 const path = require("path");
 const { app, BrowserWindow } = require("electron");
 
-const isDev = process.env.NODE_ENV !== "development";
+process.env.NODE_ENV = "production";
+
+const isDev = process.env.NODE_ENV !== "production";
 const isMac = process.platform === "darwin";
 
 function createMainWindow() {
@@ -9,6 +11,8 @@ function createMainWindow() {
         title: "Cat Lover",
         width: isDev ?  1229 : 650,
         height: 700,
+        frame: false, // Removes the default window frame
+        autoHideMenuBar: true, // Removes the window menu bar
     });
 
     // Open devtools if in dev env
@@ -18,10 +22,6 @@ function createMainWindow() {
 
     mainWindow.loadFile(path.join(__dirname, "./renderer/index.html"));
 }
-
-app.whenReady().then(() => {
-    createMainWindow();
-});
 
 app.whenReady().then(() => {
   createMainWindow()
