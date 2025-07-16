@@ -200,6 +200,14 @@ main{
 
 
 /***** SHOWER TIME *****/
+.shower-head{
+    position: absolute;
+    top: 17%;
+    right: 10%;
+    z-index: 2;
+    cursor: pointer;
+}
+
 .catbath{
     position: absolute;
     left: 15%;
@@ -210,6 +218,15 @@ main{
 
 
 /***** MEAL TIME *****/
+.bowls{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
 .cateat{
     position: absolute;
     left: 15%;
