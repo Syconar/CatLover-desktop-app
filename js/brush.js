@@ -44,8 +44,8 @@ document.addEventListener("mousemove", (e) => {
     // Calculate the max allowed position so the GIF stays inside the viewport
     let maxX = window.innerWidth - brushWidth;
     let maxY = window.innerHeight - brushHeight;
-    mouseX = clamp(e.clientX + 10, 0, maxX);
-    mouseY = clamp(e.clientY + 10, 0, maxY);
+    mouseX = clamp(e.clientX + 0, 0, maxX);
+    mouseY = clamp(e.clientY + 90, 90, maxY);
 });
 
 // Animation loop for smooth movement
