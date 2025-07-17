@@ -1,3 +1,4 @@
+// Set timer of activity
 let totalSeconds = 30;
 
 function updateTimer() {
@@ -22,3 +23,5 @@ function startTimer() {
 }
 
 window.onload = startTimer;
+// 
+

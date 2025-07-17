@@ -21,10 +21,32 @@ function createMainWindow() {
     };
 
     mainWindow.loadFile(path.join(__dirname, "./renderer/index.html"));
+
+    // Close audio window when main window is closed
+    mainWindow.on('closed', () => {
+        if (audioWindow) {
+            audioWindow.close();
+        }
+    });
+}
+
+let audioWindow;
+
+function createAudioWindow() {
+    audioWindow = new BrowserWindow({
+        show: false,
+        webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: true
+        }
+    });
+    audioWindow.loadFile(path.join(__dirname, "audio.html"));
+    audioWindow.on('closed', () => { audioWindow = null; });
 }
 
 app.whenReady().then(() => { // Open a app window
   createMainWindow()
+  createAudioWindow();
 
   app.on('activate', () => { // If now window is active, open a new one
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -34,7 +56,10 @@ app.whenReady().then(() => { // Open a app window
 })
 
 app.on('window-all-closed', () => { // Check if user is using Mac
-  if (!isMac) {
-    app.quit()
+  if (audioWindow) {
+    audioWindow.close();
   }
-})
+  if (!isMac) {
+    app.quit();
+  }
+});

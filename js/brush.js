@@ -50,9 +50,8 @@ document.addEventListener("mousemove", (e) => {
 
 // Animation loop for smooth movement
 function animate() {
-    // Lerp: move 0.35% closer to the target each frame
     imgX += (mouseX - imgX); 
-    imgY += (mouseY - imgY); // lower number = smoother and bigger "lag", bigger number = more fixed movement
+    imgY += (mouseY - imgY);
     brushMouse.style.left = imgX + "px";
     brushMouse.style.top = imgY + "px";
     requestAnimationFrame(animate);
