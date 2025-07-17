@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Oswald:wght@200..700&family=Pixelify+Sans:wght@400..700&family=Quicksand:wght@300..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
-<body id="brush-page">
+<body class="brush-page active" id="brush-page">
 
     <main>
 
@@ -24,19 +24,26 @@
             </div>
         </div>
 
-        <div id="brush-cursor">
-            <img src="../img/tools/brush.png" alt="">
+        <div class="after-btns" id="after-btns">
+            <button><a href="optionsmenu.html"><img src="../img/another-btn.png" alt=""></a></button>
+            <button onclick="window.close()"><img src="../img/close-btn.png" alt=""></button>
         </div>
 
-        <div class="timebox">
-            <div class="time">
-                <h2 id="minutes">00:</h2>
-                <h2 id="seconds">00</h2>
+        <div class="full-content" id="full-content">
+            <div id="brush-cursor">
+                <img src="../img/tools/brush.png" alt="">
             </div>
-        </div>
 
-        <div class="cat catbrush">
-            <img src="../img/catForms/gifs/catBrush.gif" alt="">
+            <div class="timebox">
+                <div class="time">
+                    <h2 id="minutes">00:</h2>
+                    <h2 id="seconds">00</h2>
+                </div>
+            </div>
+
+            <div class="cat catbrush">
+                <img src="../img/catForms/gifs/catBrush.gif" alt="">
+            </div>
         </div>
 
     </main>
