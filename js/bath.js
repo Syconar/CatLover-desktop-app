@@ -50,14 +50,14 @@ class ClickAndHold {
         });
     }
 
-    _onHoldStart() { // Seting the timeout of when the click and hold event starts working (in this case, after 0.1s on hold)
+    _onHoldStart() { // Seting the timeout of when the click and hold event starts working (in this case, after 0.3s on hold)
         this.isHeld = true;
 
         this.activeHoldTimeoutId = setTimeout(() => {
             if (this.isHeld) {
                 this.onHoldStart();
             }
-        }, 100);
+        }, 300);
     }
 
     _onHoldEnd() {
