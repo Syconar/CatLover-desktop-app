@@ -69,12 +69,14 @@ class ClickAndHold {
     }
 }
 
+const bubble = document.getElementById("info-text");
 const showerHead = document.getElementById("shower-head");
 const waterFlow = document.getElementById("water-flow");
 const catImg = document.querySelector(".cat.catbath img");
 
 new ClickAndHold(showerHead,
-     () => {waterFlow.style.display = "block"; // onHoldStart
+     () => {bubble.style.display = "none";
+            waterFlow.style.display = "block"; // onHoldStart
             catImg.src = "../img/catForms/gifs/catBath.gif";}, // Change the cat image
      () => {waterFlow.style.display = "none";} // onHoldEnd
 );
