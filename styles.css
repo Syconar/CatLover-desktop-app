@@ -219,6 +219,19 @@ main{
 
 
 /***** MEAL TIME *****/
+.meal-piece-active{
+    cursor: none !important;
+}
+
+.meal-piece{
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 3;
+    transform: rotate(-35deg);
+}
+
 .bowls{
     position: absolute;
     left: 50%;
@@ -232,5 +245,6 @@ main{
     position: absolute;
     left: 15%;
     bottom: 28px;
+    z-index: 1;
 }
 /* */
