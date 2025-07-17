@@ -29,6 +29,7 @@ window.onload = startTimer;
 // Piece of meal icon fixed to cursor on click at the bowls
 const mealPiece = document.getElementById("meal-piece");
 const bowls = document.getElementById("bowls");
+const bubble = document.getElementById("info-text");
 const catImg = document.querySelector(".cat.cateat img");
 
 // Hide the meal piece by default
@@ -38,6 +39,7 @@ bowls.addEventListener("click", () => {
     // Hide the cursor
     document.body.classList.add("meal-piece-active");
     bowls.classList.add("meal-piece-active"); // Hide the cursor
+    bubble.style.display = "none";
     catImg.src = "../img/catForms/gifs/catEat.gif"; // Change the image to the cat with open mouth
     mealPiece.style.display = "block"; // Show the meal piece
 });
