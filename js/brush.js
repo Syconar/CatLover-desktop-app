@@ -1,7 +1,9 @@
 // Set timer of activity
-let totalSeconds = 30;
+let totalSeconds = 15;
 
 function updateTimer() {
+    if (totalSeconds < 0) return; 
+    
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
 
@@ -17,11 +19,15 @@ function startTimer() {
 
         const content = document.getElementById("full-content");
         const activeBtns = document.getElementById("after-btns");
+        const bellAudio = new Audio("../small-bell-ringing.mp3");
+        let mouseBack = document.getElementById("brush-page");
 
         if (totalSeconds < 0) {
             clearInterval(timerInterval);
             content.style.display = "none"
-            activeBtns.classList.add = ("active");
+            activeBtns.classList.add("active");
+            bellAudio.play();
+            mouseBack.classList.remove("active");
         }
     }, 1000);
 }

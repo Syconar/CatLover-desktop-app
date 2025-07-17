@@ -1,7 +1,9 @@
 // Set timer of activity
-let totalSeconds = 30;
+let totalSeconds = 15;
 
 function updateTimer() {
+    if (totalSeconds < 0) return; 
+    
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
 
@@ -17,17 +19,20 @@ function startTimer() {
 
         const content = document.getElementById("full-content");
         const activeBtns = document.getElementById("after-btns");
+        const bellAudio = new Audio("../small-bell-ringing.mp3");
+        document.body.classList.remove("meal-piece-active");
 
         if (totalSeconds < 0) {
             clearInterval(timerInterval);
             content.style.display = "none"
-            activeBtns.classList.add = ("active");
+            activeBtns.classList.add("active");
+            bellAudio.play();
         }
     }, 1000);
 }
 
 window.onload = startTimer;
-// 
+//
 
 
 // Piece of meal icon fixed to cursor on click at the bowls
@@ -75,7 +80,7 @@ function isNearCatMouth(mouseX, mouseY) {
     const distance = Math.sqrt(
         Math.pow(mouseX - catMouthX, 2) + Math.pow(mouseY - catMouthY, 2)
     );
-    return distance < 82; //82px radius
+    return distance < 90; //82px radius
 }
 
 // Animation loop for smooth movement
