@@ -44,6 +44,30 @@ main{
     cursor: pointer;
 }
 
+.after-btns{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 45px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.after-btns.active{
+    display: flex;
+}
+
+.after-btns button{
+    background: none;
+    border: none;
+}
+
+.after-btns img{
+    cursor: pointer;
+}
+
 .full-content{
     display: flex;
     flex-direction: column;
