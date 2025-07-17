@@ -15,9 +15,13 @@ function startTimer() {
         totalSeconds--;
         updateTimer();
 
-        if (totalSeconds <= 0) { // When the timer is at zero, then add notification in the form of option buttons
+        const content = document.getElementById("full-content");
+        const activeBtns = document.getElementById("after-btns");
+
+        if (totalSeconds < 0) {
             clearInterval(timerInterval);
-            alert("Play time is over")
+            content.style.display = "none"
+            activeBtns.classList.add = ("active");
         }
     }, 1000);
 }
