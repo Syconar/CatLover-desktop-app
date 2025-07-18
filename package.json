@@ -2,23 +2,43 @@
   "name": "cat-lover",
   "productName": "Cat Lover",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple desktop app to take care of your own little cat.",
   "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
-  },
+  "author": "Filip Urbásek",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Syconar/CatLover-desktop-app.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Syconar/CatLover-desktop-app/issues"
   },
   "homepage": "https://github.com/Syconar/CatLover-desktop-app#readme",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
   "dependencies": {
-    "electron": "^37.2.1"
+  },
+  "devDependencies": {
+    "electron": "^37.2.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.yourname.catlover",
+    "productName": "Cat Lover",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": []
+    }
   }
 }
